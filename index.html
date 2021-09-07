@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code</title>
+  </head>
+  <body>
+    <input type="text" id="qr-data" onchange="generateQR()" />
+    <div id="qrcode"></div>
+    <script src="qrcode.min.js"></script>
+    <script>
+      var qrdata = document.getElementById("qr-data");
+      var qrcode = new QRCode(document.getElementById("qrcode"));
+      function generateQR() {
+        var data = qrdata.value;
+        qrcode.makeCode(data);
+      }
+    </script>
+  </body>
+</html>
